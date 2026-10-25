@@ -309,3 +309,193 @@ button,input{font:inherit}
 @media(max-width:520px){
   .invite-heading h3{font-size:21px;line-height:1.22;}
 }
+
+/* FIX V2.8.4 — can bang giao dien tren dien thoai */
+
+/* 1. Hai gia dinh luon can xung trai - phai, trai tim nam ngang */
+.families {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(5px, 1.8vw, 12px);
+  align-items: center;
+}
+
+.families > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.families b {
+  font-size: clamp(8px, 2.1vw, 10px);
+  letter-spacing: .04em;
+}
+
+.families p {
+  font-size: clamp(10px, 2.5vw, 12px);
+}
+
+.heart-sep {
+  transform: none !important;
+  font-size: clamp(20px, 6vw, 28px);
+  line-height: 1;
+}
+
+/* 2. Loi thong bao ngay vui: nho gon, giu tren mot dong */
+.hero-copy {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(13px, 2.4vw, 16px);
+  line-height: 1.45;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3. Vien khung hero do ro rang, bo kin hon */
+.hero-frame {
+  inset: 12px;
+  border: 4px solid #9c1118;
+  border-radius: 24px;
+  z-index: 2;
+}
+
+.hero-frame:before,
+.hero-frame:after {
+  width: 54px;
+  height: 54px;
+  border-color: #9c1118;
+  border-width: 3px;
+}
+
+/* Dam bao hinh rong phuong va noi dung hien tren nen khung */
+.hero-title-block,
+.couple-frame,
+.hero-copy,
+.hero-side-blessing {
+  z-index: 4;
+}
+
+/* 4. Lich: giu trai tim khoanh so hien ro tren man hinh nho */
+.calendar-grid span {
+  overflow: visible;
+}
+
+.calendar-grid .heart-outline,
+.calendar-grid .heart-fill {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+}
+
+.calendar-grid .heart-outline:before,
+.calendar-grid .heart-fill:before {
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 5. Dieu chinh tren dien thoai */
+@media (max-width: 520px) {
+  .families {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+    gap: 5px;
+  }
+
+  .families b {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+
+  .families p {
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .families small {
+    font-size: 8px;
+  }
+
+  .heart-sep {
+    transform: none !important;
+    font-size: 21px;
+  }
+
+  .hero-frame {
+    inset: 9px;
+    border-width: 3px;
+    border-radius: 20px;
+  }
+
+  .hero-copy {
+    width: 100%;
+    font-size: 13px;
+    white-space: nowrap;
+    margin-top: 50px;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .heart-outline:before,
+  .heart-fill:before {
+    font-size: 35px;
+  }
+}
+
+/* SUA LOI THIEP CUOI - TIEP TUC V2.8.4 */
+
+/* 1. Loi moi: thu nho chu de tranh roi rieng chu "dinh" */
+.invite-heading h3 {
+  font-size: clamp(13px, 2.6vw, 20px) !important;
+  line-height: 1.35;
+  letter-spacing: -0.25px;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* 2. "Hen gap ban tai day": giam khoang 45% */
+.map-section .section-title h3 {
+  font-size: 1.00em !important;
+  line-height: 1.60;
+}
+
+/* FIX TRAI TIM NGAY 13 TREN DIEN THOAI */
+.calendar-grid.dates > span {
+  position: relative;
+  overflow: visible !important;
+}
+
+.calendar-grid.dates > span.heart-outline {
+  z-index: 2;
+  isolation: isolate;
+  color: #9c1118 !important;
+  font-weight: 700;
+}
+
+.calendar-grid.dates > span.heart-outline::before {
+  content: "♡" !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -52%);
+  display: block !important;
+  font-family: Arial, sans-serif;
+  font-size: 2.5em !important;
+  line-height: 1;
+  color: #c5222a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: -1;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.calendar-grid.dates > span.heart-fill {
+  z-index: 2;
+}
+
+@media (max-width: 520px) {
+  .calendar-grid.dates > span.heart-outline::before {
+    font-size: 2.3em !important;
+  }
+}
