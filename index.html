@@ -146,7 +146,6 @@
 </main>
 
 <script src="script.js"></script>
-
 <script>
 document.getElementById("rsvpForm").addEventListener("submit", async function (event) {
   event.preventDefault();
@@ -182,7 +181,7 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
       })
     });
 
-    toast.textContent = "Cảm ơn bạn đã gửi xác nhận tham dự ❤️";
+    toast.textContent = "Cảm ơn bạn! Đã gửi xác nhận tham dự ❤️";
     form.reset();
   } catch (error) {
     toast.textContent = "Chưa gửi được. Bạn vui lòng thử lại nhé!";
