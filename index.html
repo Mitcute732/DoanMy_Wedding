@@ -32,7 +32,10 @@
       <h1><span>Văn Đoàn</span><i>&amp;</i><span>Trà My</span></h1>
       <div class="qm-divider"><b></b><span>❧</span><b></b></div>
       <div class="cover-date">14 tháng 11, 2026</div>
-      <div class="cover-invite">Thân Mời</div>
+      <div class="cover-invite">
+  <div>Thân Mời</div>
+  <div id="guestInviteName"></div>
+</div>
       <button id="openInvitation" class="primary-btn">Mở thiệp</button>
     </div>
   </div>
@@ -154,6 +157,17 @@
   </footer>
 </main>
 
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const guestName = params.get("to");
+  const nameElement = document.getElementById("guestInviteName");
+
+  if (guestName && nameElement) {
+    nameElement.textContent = guestName.trim();
+  }
+})();
+</script>
 <script src="script.js"></script>
 <script>
 document.getElementById("rsvpForm").addEventListener("submit", async function (event) {
