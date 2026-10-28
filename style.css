@@ -23,7 +23,7 @@ button,input{font:inherit}
 .qm-card:after{content:"";position:absolute;inset:0;border:1px solid rgba(123,16,23,.12);pointer-events:none}
 .qm-emblem{
   position:absolute;z-index:5;left:50%;top:6px;transform:translateX(-50%);
-  width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  width:45px;height:45px;border-radius:50%;display:grid;place-items:center;
   background:#8b0e14;color:#ead1c6;font-family:"Songti SC","Noto Serif CJK SC",serif;
   font-size:28px;box-shadow:0 8px 22px rgba(91,6,11,.22)
 }
@@ -459,19 +459,7 @@ button,input{font:inherit}
   line-height: 1.60;
 }
 
-/* FIX TRAI TIM NGAY 13 TREN DIEN THOAI */
-.calendar-grid.dates > span {
-  position: relative;
-  overflow: visible !important;
-}
-
-.calendar-grid.dates > span.heart-outline {
-  z-index: 2;
-  isolation: isolate;
-  color: #9c1118 !important;
-  font-weight: 700;
-}
-
+/* CHINH TRAI TIM NGAY 13 */
 .calendar-grid.dates > span.heart-outline::before {
   content: "♡" !important;
   position: absolute;
@@ -480,7 +468,9 @@ button,input{font:inherit}
   transform: translate(-50%, -52%);
   display: block !important;
   font-family: Arial, sans-serif;
-  font-size: 2.5em !important;
+  font-size: 2.9em !important;
+  font-weight: 400 !important;
+  -webkit-text-stroke: 0.3px;
   line-height: 1;
   color: #c5222a !important;
   opacity: 1 !important;
@@ -490,13 +480,10 @@ button,input{font:inherit}
   white-space: nowrap;
 }
 
-.calendar-grid.dates > span.heart-fill {
-  z-index: 2;
-}
-
 @media (max-width: 520px) {
   .calendar-grid.dates > span.heart-outline::before {
-    font-size: 2.3em !important;
+    font-size: 2.7em !important;
+    -webkit-text-stroke: 0.25px;
   }
 }
 /* HIEU UNG MO THIEP CHAM VA MEM MAI */
